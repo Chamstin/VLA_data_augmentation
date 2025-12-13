@@ -1,0 +1,9 @@
+{
+  "videos": [
+    {
+      "video_path": "test_initial_frame.jpg"
+    }
+  ],
+  "state": [],
+  "continuous_gripper_state": []
+}

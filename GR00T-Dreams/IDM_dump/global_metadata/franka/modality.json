@@ -1,0 +1,75 @@
+{
+    "state": {
+        "eef_position": {
+            "start": 0,
+            "end": 3
+        },
+        "eef_rotation": {
+            "start": 3,
+            "end": 6,
+            "rotation_type": "euler_angles_rpy"
+        },
+        "gripper_position": {
+            "start": 6,
+            "end": 7
+        },
+        "joint_position": {
+            "start": 7,
+            "end": 14
+        }
+    },
+    "action": {
+        "eef_position":{
+            "start": 0,
+            "end": 3
+        },
+        "eef_rotation": {
+            "start": 3,
+            "end": 6,
+            "rotation_type": "euler_angles_rpy"
+        },
+        "eef_position_delta": {
+            "start": 6,
+            "end": 9,
+            "absolute": false
+        },
+        "eef_rotation_delta": {
+            "start": 9,
+            "end": 12,
+            "rotation_type": "euler_angles_rpy",
+            "absolute": false
+        },
+        "gripper_position": {
+            "start": 12,
+            "end": 13
+        },
+        "gripper_velocity": {
+            "start": 13,
+            "end": 14
+        },
+        "joint_position": {
+            "start": 14,
+            "end": 21
+        },
+        "joint_velocity": {
+            "start": 21,
+            "end": 28
+        }
+    },
+    "video": {
+        "exterior_image_1_left_pad_res256_freq15": {
+            "original_key": "observation.images.exterior_image_1_left_pad_res256_freq15"
+        },
+        "exterior_image_2_left_pad_res256_freq15": {
+            "original_key": "observation.images.exterior_image_2_left_pad_res256_freq15"
+        },
+        "wrist_image_left_pad_res256_freq15": {
+            "original_key": "observation.images.wrist_image_left_pad_res256_freq15"
+        }
+    },
+    "annotation": {
+        "language.language_instruction": {},
+        "language.language_instruction_2": {},
+        "language.language_instruction_3": {}
+    }
+}
