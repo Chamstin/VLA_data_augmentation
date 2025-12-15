@@ -15,12 +15,13 @@ set -euo pipefail
 : "${CKPT_PATH:?Set CKPT_PATH to the Cosmos-Predict2.5-2B base/pre-trained ema bf16 .pt checkpoint}"
 
 export IMAGINAIRE_OUTPUT_ROOT="${IMAGINAIRE_OUTPUT_ROOT:-/tmp/imaginaire4-output}"
+export DATASET_ROOT="${DATASET_ROOT:-datasets/robot_low_singleview_json}"
 
 torchrun --nproc_per_node=1 --master_port=12341 -m scripts.train \
   --config=cosmos_predict2/_src/predict2/configs/video2world/config.py -- \
   experiment=predict2_lora_training_2b_cosmos_nemo_assets_json \
-  dataloader_train.dataset.dataset_dir="datasets/robot_low_singleview_json/train" \
-  dataloader_val.dataset.dataset_dir="datasets/robot_low_singleview_json/validation" \
+  dataloader_train.dataset.dataset_dir="$DATASET_ROOT/train" \
+  dataloader_val.dataset.dataset_dir="$DATASET_ROOT/validation" \
   checkpoint.load_path="$CKPT_PATH" \
   checkpoint.load_training_state=False \
   checkpoint.strict_resume=False \
@@ -35,4 +36,3 @@ torchrun --nproc_per_node=1 --master_port=12341 -m scripts.train \
   model.config.init_lora_weights=True \
   optimizer.lr=3.0e-5 \
   optimizer.weight_decay=0.1
-
